@@ -11,7 +11,8 @@ api = tradeapi.REST(API_KEY, API_SECRET, APCA_API_BASE_URL, api_version='v2')
 account = api.get_account()
 
 mydb = db.connect(
-	host="localhost",
+	host="199.204.104.202",
+	port="9886",
 	user="root",
 	password="P@55w0rd!",
 	database="AutoPilot"
