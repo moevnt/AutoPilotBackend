@@ -82,7 +82,3 @@ class Trading:
 		mydb.commit()
 		print('Successfully bought '+str(quantity)+' shares of '+ticker)
 		
-		
-trade = Trading
-trade.buy("AAPL", 5, 100.00, 3)
-trade.sellAll(trade, '3')

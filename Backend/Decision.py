@@ -1,13 +1,12 @@
-from Backend import DataRetrival, Trading
-from pandas_datareader import data as wb
-import datetime
+from Backend import DataRetrival
 
-retrieval = DataRetrival
-trade = Trading
-today = datetime.date
-print(today)
+data = DataRetrival
+ticker = 'AAPL'
+ma = data.calculateMovingAverage(data, ticker)
+lower = data.calculateLowerBand(data, ticker)
+today = data.getToday(ticker)
+test = today.iloc[0][5]
 
-class Decision:
-	
-	def makeDecision(self, ticker):
-		wb.DataReader(ticker, data_source='yahoo', start=today)
+if test < ma:
+	if test > lower:
+		print("BUY")
